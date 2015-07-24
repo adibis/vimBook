@@ -2,9 +2,14 @@
 
 Many times while merging changes or reviewing differences, you will be using a diff utility such as vimdiff.
 
-## Keybindings
+You can either vimdiff by vimdiff file1 file2. If you have both files open in splits, run :diffthis in both splits and vim will enter the diff mode.
 
-## Diff Options
+```vim
+dp  " Put current difference in the other file.
+do  " Get the current difference from the other file.
+]c  " Go to the next diff.
+[c  " Go to the previous diff.
+```
 
 You can decide what vim considers a diff and what not. Following options can help reduce clutter in the diff output.
 
