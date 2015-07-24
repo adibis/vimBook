@@ -9,7 +9,7 @@ dp          " Put current difference in the other file. (Diff Put)
 do          " Get the current difference from the other file. (Diff Obtain)
 ]c          " Go to the next diff.
 [c          " Go to the previous diff.
-<C-w><C-w>  " Move between the diff splits.
+<C-w>w      " Move between the diff splits.
 :diffupdate " Recalculate the diff.
 ```
 
@@ -17,4 +17,5 @@ You can decide what vim considers a diff and what not. Following options can hel
 
 ```vim
 set diffopt+=iwhite " Ignore whitespaces in diff.
+set diffopt+=icase  " Ignore case in diff.
 ```
