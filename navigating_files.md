@@ -1,4 +1,4 @@
-# Navigating Files
+#Navigating Files
 
 ###Keybindings
 
