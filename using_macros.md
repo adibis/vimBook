@@ -47,4 +47,4 @@ You can use ```:registers``` command to list all saved macros. In our current ex
 
 ##Editing Macros
 
-There are times when you will screw up a macro. If it has 20 commands, redoing everything will consume more time than simply redoing the edit per line. You can do that by the following commands. Let's say we want to also change the case of the first letter in the ```required_text``` in the current macro. ```:let @q='<C-r><C-r>q``` will paste the contents of the ```q``` register on the vim command. You can edit them, append ```'``` at the end and hit enter to save the macro. In our case it will be, ```let @q='vf,ldf,v$hd0~0j'```.
+There are times when you will screw up a macro. If it has 20 commands, redoing everything will consume more time than simply redoing the edit per line. You can do that by the following commands. Let's say we want to also change the case of the first letter in the ```required_text``` in the current macro. ```:let @q='[C-r][C-r]q``` will paste the contents of the ```q``` register on the vim command. You can edit them, append ```'``` at the end and hit enter to save the macro. In our case it will be, ```let @q='vf,ldf,v$hd0~0j'```.
