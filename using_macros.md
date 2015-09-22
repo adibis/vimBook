@@ -24,12 +24,13 @@ q   " Stop recording.
 
 So to do what we want in the example above, position the cursor at the start of the first line. Then execute ```qqqqq``` to clear and start recording in ```q``` register. Followed by, 
 
-```
+```vim
 vf,  " Select (until you) find a comma.
 l    " Move cursor right once.
 d    " Delete the selected data.
 f,   " Move to the next comma.
 v$   " Select till end of line.
+h    " Move selection to left (to avoid moving next line up)
 d    " Delete the selected data.
 0j   " Go to the start of next line.
 ```
@@ -42,4 +43,8 @@ You can record multiple commands like this in different registers and use them w
 
 Once you start using macros regularly, you will notice that you keep reusing the same macros multiple times. In such a case, it's best to save the macro in your vimrc so it will always be available to you when you start vim.
 
-You can use ```:registers``` command to list all saved macros. In our current example, use ```:reg q``` to view contents of ```q``` register.
+You can use ```:registers``` command to list all saved macros. In our current example, use ```:reg q``` to view contents of ```q``` register. You will see something like ```"q vf,ldf,v$hd0j```. This can now be saved in your vimrc file as: ```let @q='vf,ldf,v$hd0j'```. Now every time you start vim, you can execute ```@q``` to run this macro.
+
+##Editing Macros
+
+There are times when you will screw up a macro. If it has 20 commands, redoing everything will consume more time than simply redoing the edit per line. You can do that by the following commands. Let's say we want to also change the case of the first letter in the ```required_text``` in the current macro. ```:let @q='<C-r><C-r>q``` will paste the contents of the ```q``` register on the vim command. You can edit them, append ```'``` at the end and hit enter to save the macro. In our case it will be, ```let @q='vf,ldf,v$hd0~0j'```.
